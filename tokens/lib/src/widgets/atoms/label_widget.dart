@@ -4,14 +4,7 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class LabelWidget extends LabelComponent {
   LabelWidget._(
-      {required String text,
-      required TypeComponent type,
-      required Style<LabelStyle> styles})
-      : super(
-          text: text,
-          type: type,
-          styles: styles,
-        );
+      {required super.text, required super.type, required super.styles});
 
   factory LabelWidget.regular(
     String text, {

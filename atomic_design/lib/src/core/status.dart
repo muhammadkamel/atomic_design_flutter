@@ -1,4 +1,5 @@
 import 'style.dart';
+
 export 'type.dart';
 
 typedef Loading<T> = Function(T style);
@@ -39,7 +40,7 @@ class StatusLoading<T> extends Status<T> {
     required OrElse orElse,
   }) {
     if (loading != null) {
-      return loading(style.loading!);
+      return loading(style.loading as T);
     } else {
       return orElse();
     }
@@ -56,7 +57,7 @@ class StatusEmpty<T> extends Status<T> {
       Regular<T>? regular,
       required OrElse orElse}) {
     if (empty != null) {
-      return empty(style.empty!);
+      return empty(style.empty as T);
     } else {
       return orElse();
     }
@@ -73,7 +74,7 @@ class StatusError<T> extends Status<T> {
       Regular<T>? regular,
       required OrElse orElse}) {
     if (error != null) {
-      return error(style.error!);
+      return error(style.error as T);
     } else {
       return orElse();
     }
@@ -90,7 +91,7 @@ class StatusRegular<T> extends Status<T> {
       Regular<T>? regular,
       required OrElse orElse}) {
     if (regular != null) {
-      return regular(style.regular!);
+      return regular(style.regular as T);
     } else {
       return orElse();
     }

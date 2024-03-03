@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-
 import 'package:atomic_design_flutter/src/core/status.dart';
+import 'package:flutter/material.dart';
 
 import 'style.dart';
 
@@ -13,10 +12,10 @@ abstract class Component<T> extends StatelessWidget {
   final Style<T> styles;
   late Status<T> status;
   Component({
-    Key? key,
+    super.key,
     required this.styles,
     required this.type,
-  }) : super(key: key) {
+  }) {
     status = type.fromStatus<T>();
   }
 
